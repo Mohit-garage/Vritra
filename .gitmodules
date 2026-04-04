@@ -1,0 +1,3 @@
+[submodule "Vritra/vendor/spdlog"]
+	path = Vritra/vendor/spdlog
+	url = https://github.com/gabime/spdlog
