@@ -2,6 +2,7 @@
 #include "Core.h"
 #include "memory.h"
 #include "spdLog/spdlog.h"
+#include "spdlog/fmt/ostr.h"
 
 namespace VT {
 	class VRITRA_API Log

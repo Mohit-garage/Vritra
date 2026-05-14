@@ -9,3 +9,5 @@
 #else
 	#error Vritra only supports Windows!
 #endif
+
+#include <sstream>

@@ -1,0 +1,86 @@
+#pragma once
+
+#include "Vritra/Events/Event.h"
+
+namespace VT {
+
+	class WindowResizeEvent : public Event
+	{
+	public:
+		WindowResizeEvent(unsigned int width, unsigned int height)
+			: m_Width(width), m_Height(height) {}
+
+		unsigned int GetWidth() const { return m_Width; }
+		unsigned int GetHeight() const { return m_Height; }
+
+		std::string ToString() const override
+		{
+			std::stringstream ss;
+			ss << "WindowResizedEvent: " << GetWidth() << "," << GetHeight();
+			return ss.str();
+		}
+
+		EVENT_CLASS_TYPE(WindowResize)
+		EVENT_CLASS_CATEGORY(EventCategoryApplication)
+	private:
+		unsigned int m_Width, m_Height;
+	};
+
+	class WindowClosedEvent : public Event
+	{
+	public:
+		WindowClosedEvent() = default;
+
+		EVENT_CLASS_TYPE(WindowClose)
+		EVENT_CLASS_CATEGORY(EventCategoryApplication)
+	};
+
+	class WindowMovedEvent : public Event
+	{
+	public:
+		WindowMovedEvent(unsigned int xoffset, unsigned int yoffset)
+			: m_XOffset(xoffset), m_YOffset(yoffset) {}
+
+		unsigned int GetXOffset() const { return m_XOffset; }
+		unsigned int GetYOffset() const { return m_YOffset; }
+
+		std::string ToString() const override
+		{
+			std::stringstream ss;
+			ss << "WindowMovedEvent: " << GetXOffset() << "," << GetYOffset();
+			return ss.str();
+		}
+
+		EVENT_CLASS_TYPE(WindowMoved)
+		EVENT_CLASS_CATEGORY(EventCategoryApplication)
+	private:
+		unsigned int m_XOffset, m_YOffset;
+	};
+
+	class AppTickEvent : public Event
+	{
+	public:
+		AppTickEvent() = default;
+
+		EVENT_CLASS_TYPE(AppTick)
+		EVENT_CLASS_CATEGORY(EventCategoryApplication)
+	};
+
+	class AppUpdateEvent : public Event
+	{
+	public:
+		AppUpdateEvent() = default;
+
+		EVENT_CLASS_TYPE(AppUpdate)
+		EVENT_CLASS_CATEGORY(EventCategoryApplication)
+	};
+
+	class AppRenderEvent : public Event
+	{
+	public:
+		AppRenderEvent() = default;
+
+		EVENT_CLASS_TYPE(AppRender)
+		EVENT_CLASS_CATEGORY(EventCategoryApplication)
+	};
+}
