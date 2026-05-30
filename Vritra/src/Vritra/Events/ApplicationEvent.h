@@ -16,7 +16,7 @@ namespace VT {
 		std::string ToString() const override
 		{
 			std::stringstream ss;
-			ss << "WindowResizedEvent: " << GetWidth() << "," << GetHeight();
+			ss << "WindowResizeEvent: " << GetWidth() << "," << GetHeight();
 			return ss.str();
 		}
 

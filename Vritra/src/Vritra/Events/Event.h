@@ -2,9 +2,6 @@
 
 #include "Vritra/Core.h"
 
-#include <string>
-#include <functional>
-
 namespace VT {
 
 	enum class EventType

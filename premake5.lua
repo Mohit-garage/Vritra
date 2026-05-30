@@ -18,6 +18,9 @@ project "Vritra"
     targetdir ("bin/" .. outputdir .. "/%{prj.name}")
     objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
 
+    pchheader"vtpch.h"
+    pchsource"Vritra/src/vtpch.cpp"
+
     files
     {
         "%{prj.name}/src/**.h",
